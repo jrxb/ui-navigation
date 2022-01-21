@@ -14,7 +14,7 @@ Therefore you cannot get it from [crates.io](https://crates.io). You
 must specify it as a git dependency in your `Cargo.toml`:
 ```toml
 [dependencies]
-bevy-ui-navigation = "0.8.2"
+bevy-ui-navigation = "0.9.0"
 ```
 
 It will be available in crates.io when bevy 0.6 comes out.
@@ -199,6 +199,9 @@ for a demonstration.
 
 * `0.8.2`: Fix offsetting of mouse focus with `UiCamera`s with a transform set
   to anything else than zero.
+* `0.9.0`: Add `Focusable::cancel` (see documentation for details); Add warning
+  message rather than do dumb things when there is more than a single `NavRequest`
+  per frame
 
 # License
 
