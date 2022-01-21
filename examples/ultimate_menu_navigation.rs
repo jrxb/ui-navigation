@@ -84,7 +84,9 @@ fn setup(
     use FlexWrap::Wrap;
     use JustifyContent::{FlexStart, SpaceBetween};
     // ui camera
-    commands.spawn_bundle(UiCameraBundle::default());
+    commands
+        .spawn_bundle(UiCameraBundle::default())
+        .insert(Transform::from_xyz(40.0, -60.0, 1000.0 - 0.1));
 
     let vertical = NodeBundle {
         style: style! {
@@ -159,7 +161,7 @@ fn setup(
         ..Default::default()
     };
 
-    let menu = |id: Entity| NavMenu::reachable_from(id);
+    let menu = NavMenu::reachable_from;
     let cycle_menu = |id: Entity| NavMenu::reachable_from(id).cycling();
     let mut spawn = |bundle: &FocusableButtonBundle| commands.spawn_bundle(bundle.clone()).id();
 
